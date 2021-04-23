@@ -1,12 +1,4 @@
-import express from "express"; //sintaxe nova, substitui o const require
-import "./database";
-import { routes } from "../routes";
+import { http } from "./http";
+import "./websocket/client";
 
-const app = express();
-
-app.use(express.json());
-app.use(routes);
-
-app.listen(3333, () => {
-    console.log("Server is running on port 3333");
-})
+http.listen(3333, () => {console.log("Server is running on port 3333")})
